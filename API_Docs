@@ -1,0 +1,103 @@
+import { text } from "express"
+
+1. User Registration
+
+    Can add new users
+
+    Method :  POST
+    URL    :  /api/users
+
+    REQUEST Parameters 
+
+    name     : User have a name,
+    mobile   : User have a mobile,
+    email    : User have a email,
+
+    RESPONSE 
+
+    201 : Success,
+    {
+    name     : User can have a name,
+    mobile   : User can have a mobile,
+    email    : User can have a email,
+
+    }
+    
+    400 : {Error:"User already exists"}
+
+
+
+
+2.CREATE NEW MESSAGE
+
+    CREATES NEW MESSAGE
+
+    Method : POST,
+    URL    : /api/messages
+
+    
+    REQUEST Parameters 
+
+    senderId: message have a sender id
+    recieverId: message have a reciever id
+    text:message should have a text
+    confirmationId?: will/willnot have confirmationId
+
+    RESPONSE 
+
+    200 : Success,
+    {
+    senderId     : User can have a senderId,
+    recieverId   : User can have a recieverId,
+    text    : User can have a text,
+
+    }
+    500:Error
+    No message to store
+
+
+
+3. GET MESSAGES FOR A CHAT
+
+    Get Details of messages user by chat
+
+    Method : GET,
+    URL    : /api/messages/:id
+
+    Response 
+
+    200:Success
+    {Messages}
+    404:{error:"Chat not Found}
+
+
+
+4. New Chat for 2 Users
+
+    Create new chat for 2 users
+
+    Method :  POST
+    URL    :  /api/chats
+
+    REQUEST Parameters 
+
+    
+    senderId     : User can have a senderId,
+    recieverId   : User can have a recieverId,
+
+    RESPONSE 
+
+    200 : Success,
+
+
+
+5. GET CONVERSATION DETAILS
+
+
+    Method :  GET
+    URL    :  /api/users/:conversationId
+
+    Response 
+
+    200:Success
+    {data}
