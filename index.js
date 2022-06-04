@@ -43,16 +43,14 @@ io.on("connect", (socket) => {
       addMessage(message, sender ,reciever,conversationId).then((response)=>{
         if(response.data.stranger){
             console.log("resolved data in then",response);
-            socket.broadcast.to(reciever).emit('recieveMessage Notification',JSON.stringify({"stranger field"}));
+            socket.broadcast.to(users[reciever]).emit('recieveMessage Notification',JSON.stringify({"stranger field"}));
           }
           if(response.data){
-            socket.broadcast.to(reciever).emit('recieveMessage',JSON.stringify({ response }));
+            socket.broadcast.to(users[reciever]).emit('recieveMessage',JSON.stringify({ response }));
           }
-        
       })
         .catch((err)=>{
           console.log(err);
-  
       })
     }
  
