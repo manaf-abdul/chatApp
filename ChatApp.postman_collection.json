@@ -1,0 +1,153 @@
+{
+	"info": {
+		"_postman_id": "be5d8567-53e9-4b20-9071-0a510af9b684",
+		"name": "ChatApp",
+		"description": "# Introduction\nWhat does your API do?\n\n# Overview\nThings that the developers should know about\n\n# Authentication\nWhat is the preferred way of using the API?\n\n# Error Codes\nWhat errors and status codes can a user expect?\n\n# Rate limit\nIs there a limit to the number of requests a user can send?",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18993596"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Create New User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"bilal\",\r\n    \"email\":\"bilal123\",\r\n    \"password\":\"12345\",\r\n    \"user\":\"mohdbilal\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{example}}/api/users",
+							"host": [
+								"{{example}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Messages",
+			"item": [
+				{
+					"name": "Create new message",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"senderId\":\"629ae48fb027193eb47023f5\",\r\n    \"receiverId\":\"629a317aa42b6c3160e572e0\",\r\n    \"text\":\"haaai\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{example}}/api/messages",
+							"host": [
+								"{{example}}"
+							],
+							"path": [
+								"api",
+								"messages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get messages for a chat id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{example}}/api/messages/629b0b2ea29b8040b86dac6f",
+							"host": [
+								"{{example}}"
+							],
+							"path": [
+								"api",
+								"messages",
+								"629b0b2ea29b8040b86dac6f"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Chats",
+			"item": [
+				{
+					"name": "New Chat for 2 users",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"senderId\":\"629ae4a2b027193eb47023f7\",\r\n    \"receiverId\":\"629ae48fb027193eb47023f5\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{example}}/api/chat",
+							"host": [
+								"{{example}}"
+							],
+							"path": [
+								"api",
+								"chat"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get conversation Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{example}}/api/chat/find/629b1ff2fd811b2b68ad8551/629b2007fd811b2b68ad8553",
+							"host": [
+								"{{example}}"
+							],
+							"path": [
+								"api",
+								"chat",
+								"find",
+								"629b1ff2fd811b2b68ad8551",
+								"629b2007fd811b2b68ad8553"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "example",
+			"value": "localhost:8800"
+		}
+	]
+}
